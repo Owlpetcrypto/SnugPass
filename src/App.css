@@ -1,38 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family:Open+Sans:wght@300&display:swap');
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Verdana', 'Arial', 'Helvetica', 'sans-serif';
   color: white;
+  font-size: 20px;
+  overflow: auto;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  box-sizing: border-box;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.background {
+  position: relative;
+  background-image: url(./assets/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+nav {
+  border: 3px solid #00ffff;
+  width: max-content;
+  margin: 100px auto;
+  border-radius: 40px;
+  background-color: rgba(0, 255, 255, 0.22);
+  min-height: 100px;
+  display: flex;
+  padding-inline: 150px;
+}
+
+div.snugpassbox {
+  background-color: rgba(0, 255, 255, 0.22);
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 50px;
+}
+
+div.snugpassbox p {
+  line-height: 2;
+  margin: 0;
+}
+
+h1.headingglow {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.941);
+}
+
+
+.bordered-box {
+  border: 4px solid cyan;
+  border-radius: 12px;
+  position: relative;
+  margin-top: 12px;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.bordered-box .title {
+  position: absolute;
+  font-size: 1rem;
+  top: -2em;
+  left: 2em;
+  margin: 0;
+}
+
+.bordered-box .subtitle {
+  background-color: rgb(20, 20, 20);
+  border-radius: 12px;
+  max-width: 80%;
+  padding-inline: 1em;
+  margin-top: -1rem;
+  margin-left: -1em;
+  max-width: 500px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-gap: 2rem; */
+  column-gap: 5rem;
+  row-gap: 5rem;
+  margin-top: 4rem;
+  width: max-content max-content 1fr;
+  margin-bottom: 80px;
+  margin-inline: auto;
+
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.logos {
+  border:3px solid #00ffff;
+  width: max-content;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.snugtitles{
+  font-size: x-large;
+  max-width: 300px;
+
 }
