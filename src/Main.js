@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Box, Flex, Link, Image } from '@chakra-ui/react'
 import TwitterLogo from './assets/twitter.svg'
 import DiscordLogo from './assets/discord.svg'
+import PortalLogo from './assets/portal.jpeg'
 
 function BorderedBox({ title, subtitle, children }) {
   return (
@@ -29,14 +30,14 @@ const Main = ({ accounts, setAccounts }) => {
     <Box>
       <Flex justify="center" align="center">
         <Box fontSize="x-large" marginBottom="80px">
-          <h1 className="headingglow">SNUGG PASS</h1>
+          <h1 className="headingglow">SNUG PASS</h1>
         </Box>
       </Flex>
       <Flex flexDirection="column">
         <div className="snugpassbox">
           <div>
             <p>
-              Snugg Pass is about raising awareness of Web3 & NFT technology.
+              Snug Pass is about raising awareness of Web3 & NFT technology.
             </p>
             <p>
               Built into a cozy hole, far in the space to secure the warmth for
@@ -53,26 +54,38 @@ const Main = ({ accounts, setAccounts }) => {
           </div>
         </div>
 
-        <Box margin="90px" fontSize="x-large">
-          <Link
-            href="https://pitch.com/public/813c6880-78b1-4b9d-b695-27814b4c27ff"
-            textDecoration="none"
-            color="black"
-            backgroundColor="#00ffff"
-            padding="16px"
-            border="none"
-            borderRadius="8px"
-            fontWeight="600"
-          >
-            CHECK THE PITCH DECK
-          </Link>
-        </Box>
+        <Link
+          className="check-the-pitch-deck-button"
+          href="https://pitch.com/public/813c6880-78b1-4b9d-b695-27814b4c27ff"
+        >
+          CHECK THE PITCH DECK
+        </Link>
 
         <div>
           <hr color="#00ffff" width="80%"></hr>
         </div>
 
-        {/* 2nd section */}
+        {/* second section */}
+        <Box fontSize="x-large" marginTop="1.9%">
+          <h1 className="headingglow" id="portal">
+            Portal
+          </h1>
+        </Box>
+
+        <div>
+          <Image className="portal-logo" src={PortalLogo} />
+        </div>
+
+        <Link className="enter-button" href="https://snugpass.club/">
+          ENTER
+        </Link>
+
+        <div>
+          <hr color="#00ffff" width="80%"></hr>
+        </div>
+
+        {/* third section */}
+
         <Box fontSize="x-large" marginTop="1.9%">
           <h1 className="headingglow" id="thehole">
             THE HOLE
@@ -121,7 +134,7 @@ const Main = ({ accounts, setAccounts }) => {
         </div>
       </Flex>
 
-      {/* Third section */}
+      {/* fourth section */}
 
       <div>
         <hr color="#00ffff" width="80%"></hr>
@@ -137,13 +150,13 @@ const Main = ({ accounts, setAccounts }) => {
         <Flex justify="center" align="center">
           <Box className="logos">
             <Link href="https://twitter.com/Snugpass">
-              <Image boxSize={'120px'} src={TwitterLogo} border />
+              <Image boxSize={'120px'} src={TwitterLogo} />
             </Link>
           </Box>
 
           <Box className="logos">
-            <Link href="https://discord.com/">
-              <Image boxSize={'120px'} src={DiscordLogo} border />
+            <Link href="https://discord.gg/YFF5eASHkM">
+              <Image boxSize={'120px'} src={DiscordLogo} />
             </Link>
           </Box>
         </Flex>

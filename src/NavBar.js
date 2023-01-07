@@ -1,4 +1,4 @@
-import { Flex, Image, Link } from '@chakra-ui/react'
+import { Flex, Image, Link, Box, Button } from '@chakra-ui/react'
 import React from 'react'
 import SnugLogo from './assets/logo.svg'
 
@@ -18,34 +18,26 @@ const NavBar = ({ accounts, setAccounts }) => {
     <nav>
       <Flex gap="80px" justify="center" align="center">
         <div className="Logo">
-          <Image boxSize={'75px'} src={SnugLogo} border />
+          <Image boxSize={'75px'} src={SnugLogo} />
         </div>
-        <Link fontSize="x-large">Portal</Link>
-        <Link fontSize="x-large" href="#thehole">
+        <Link className="nav-font" href="#portal">
+          Portal
+        </Link>
+        <Link className="nav-font" href="#thehole">
           The Hole
         </Link>
-        <Link fontSize="x-large" href="#gravityconnect">
+        <Link className="nav-font" href="#gravityconnect">
           Socials
         </Link>
 
         {/* Connect */}
         {/* {isConnected ? (
-
-                <Box margin="0 30px">Connect</Box>
-
-            ) : (
-                <Button 
-                backgroundColor="#0E0D0B"
-                borderRadius="5px"
-                boxShadow="0px 2px 2px 1px #0F0F0F"
-                color="inherit"
-                cursor="pointer"
-                fontFamily="inherit"
-                padding="15px"
-                margin="0 30px"
-                fontSize="23px"
-                onClick={connectAccount}>Connect</Button>
-            )} */}
+          <Box margin="0 30px">Connect</Box>
+        ) : (
+          <Button className="connect-button" onClick={connectAccount}>
+            Connect
+          </Button>
+        )} */}
       </Flex>
     </nav>
   )
