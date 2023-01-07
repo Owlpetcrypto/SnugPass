@@ -3,6 +3,7 @@ import { Box, Flex, Link, Image } from '@chakra-ui/react'
 import TwitterLogo from './assets/twitter.svg'
 import DiscordLogo from './assets/discord.svg'
 import PortalLogo from './assets/portal.jpeg'
+import BorderOutline from './assets/box 1.svg'
 
 function BorderedBox({ title, subtitle, children }) {
   return (
@@ -34,6 +35,7 @@ const Main = ({ accounts, setAccounts }) => {
         </Box>
       </Flex>
       <Flex flexDirection="column">
+        {/* <Image src={BorderOutline} /> */}
         <div className="snugpassbox">
           <div>
             <p>
@@ -66,7 +68,7 @@ const Main = ({ accounts, setAccounts }) => {
         </div>
 
         {/* second section */}
-        <Box fontSize="x-large" marginTop="1.9%">
+        <Box>
           <h1 className="headingglow" id="portal">
             Portal
           </h1>
