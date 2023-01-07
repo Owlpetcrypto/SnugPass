@@ -21,33 +21,87 @@
   background-position: center;
 }
 
+header {
+  padding: 0px 12px;
+}
+
 nav {
   border: 3px solid #00ffff;
   /* width: max-content; */
   /* max-width: 950px; */
   max-width: 60rem;
-  margin: 100px auto;
+  margin: 50px auto;
   border-radius: 40px;
   background-color: rgba(0, 255, 255, 0.22);
   min-height: 100px;
   display: flex;
   justify-content: center;
-  padding-inline: 5%;
-
-  
+  padding-inline: 5%;  
 }
 
+
+.top-menu {
+  gap: 80px; 
+  justify-content: center; 
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (max-width: 700px) {
+  .top-menu {
+    gap: 1rem; 
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  nav {
+    width: max-content;
+  }
+}
+
+
 .nav-font{
-  font-size: 30px;
+  font-size: 25px;
 }
 
 
 
 div.snugpassbox {
-  background-color: rgba(0, 255, 255, 0.22);
+  /* background-color: rgba(0, 255, 255, 0.22); */
   max-width: 1200px;
   margin: auto;
   padding: 50px 50px;
+  background-image: url('./assets/bgborder.png'), url('./assets/bgtransparency.png');
+  background-size: 100% 100%;
+  position: relative;
+  
+
+}
+
+div.snugpassbox::before {
+  background-image: url('./assets/blockbar.png');
+  width: 43%;
+  display: block;
+  height: 8px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 10%;
+  height: 15px;
+
+}
+
+div.snugpassbox::after {
+  background-image: url('./assets/blockdotted.png');
+  content: '';
+  display: block;
+  width: 13%;
+  height: 2.5%;
+  position: absolute;
+  background-size: 100% 100%;
+  /* bottom: 19px;  */
+  bottom: 7%;
+  right: 28%;
 }
 
 div.snugpassbox p {
@@ -57,9 +111,9 @@ div.snugpassbox p {
 
 
 h1.headingglow {
-  text-shadow: 0 0 2.5rem rgb(255, 255, 255);
+  text-shadow: 0 0 0.8em rgb(255, 255, 255);
   font-family: 'Chopsic', sans-serif;
-  font-size: 70px;
+  font-size: 50px;
   color: rgba(100, 100, 100, 0);
   letter-spacing: 6px;
   -webkit-text-stroke: 2px white;
@@ -76,11 +130,15 @@ h1.headingglow {
 }
 
 .bordered-box .title {
-  position: absolute;
   font-size: 1rem;
-  top: -2em;
-  left: 2em;
-  margin: 0;
+  /* margin-top: -3rem;
+  margin-left: -1em;
+  margin-bottom: 1px; */
+  position: absolute;
+  bottom: 100%;
+  margin-left: -2rem;
+  left:3rem;
+  /* right: 15% */
 }
 
 .bordered-box .subtitle {
@@ -88,9 +146,11 @@ h1.headingglow {
   border-radius: 12px;
   max-width: 80%;
   padding-inline: 1em;
-  margin-top: -1rem;
-  margin-left: -1em;
-  max-width: 500px;
+  margin-top: -0.75rem;
+  margin-left: -2rem;
+  /* max-width: 500px; */
+  max-width: 27rem;
+  
 }
 
 .grid {
@@ -122,32 +182,51 @@ h1.headingglow {
 }
 
 .snugtitles{
-  font-size: 30px;
+  font-size: 1.5rem;
   max-width: 250px;
 }
 
 .check-the-pitch-deck-button {
   text-decoration:none;
   color:black;
-  background-color:#00ffff;
-  padding:16px;
+  /* background-color:#00ffff; */
+  padding:22px 21px 32px 21px;
   border:none;
   border-radius:8px;
   font-weight:600;
   width:max-content;
-  margin:100px auto;
+  margin:50px auto;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
+
+  
 }
+
+
 
 .enter-button{
   text-decoration:none;
   color:black;
-  background-color:#00ffff;
-  padding:16px 70px 16px 70px;
+  /* background-color:#00ffff; */
+  /* padding:22px 21px 32px 21px; */
+  padding: 22px 50px 32px 52px;
   border:none;
   border-radius:8px;
   font-weight:600;
   width:max-content;
   margin: 50px auto;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
 }
 
 .portal-logo {
