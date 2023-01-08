@@ -96,11 +96,11 @@ div.snugpassbox::after {
   content: '';
   display: block;
   width: 13%;
-  height: 2.5%;
+  height: 2%;
   position: absolute;
   background-size: 100% 100%;
   /* bottom: 19px;  */
-  bottom: 7%;
+  bottom: 5.5%;
   right: 28%;
 }
 
@@ -111,7 +111,7 @@ div.snugpassbox p {
 
 
 h1.headingglow {
-  text-shadow: 0 0 0.8em rgb(255, 255, 255);
+  filter: drop-shadow(0 0 20px white);
   font-family: 'Chopsic', sans-serif;
   font-size: 50px;
   color: rgba(100, 100, 100, 0);
