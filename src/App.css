@@ -11,7 +11,15 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin: -100px 0 0;
 }
 
 .background {
@@ -27,8 +35,6 @@ header {
 
 nav {
   border: 3px solid #00ffff;
-  /* width: max-content; */
-  /* max-width: 950px; */
   max-width: 60rem;
   margin: 50px auto;
   border-radius: 40px;
@@ -36,7 +42,8 @@ nav {
   min-height: 100px;
   display: flex;
   justify-content: center;
-  padding-inline: 5%;  
+  padding-inline: 5%;
+
 }
 
 
@@ -67,7 +74,6 @@ nav {
 
 
 div.snugpassbox {
-  /* background-color: rgba(0, 255, 255, 0.22); */
   max-width: 1200px;
   margin: auto;
   padding: 50px 50px;
@@ -99,7 +105,6 @@ div.snugpassbox::after {
   height: 2%;
   position: absolute;
   background-size: 100% 100%;
-  /* bottom: 19px;  */
   bottom: 5.5%;
   right: 28%;
 }
@@ -138,7 +143,6 @@ h1.headingglow {
   bottom: 100%;
   margin-left: -2rem;
   left:3rem;
-  /* right: 15% */
 }
 
 .bordered-box .subtitle {
@@ -148,7 +152,6 @@ h1.headingglow {
   padding-inline: 1em;
   margin-top: -0.75rem;
   margin-left: -2rem;
-  /* max-width: 500px; */
   max-width: 27rem;
   
 }
@@ -156,7 +159,6 @@ h1.headingglow {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-gap: 2rem; */
   column-gap: 5rem;
   row-gap: 5rem;
   margin-top: 4rem;
@@ -189,7 +191,6 @@ h1.headingglow {
 .check-the-pitch-deck-button {
   text-decoration:none;
   color:black;
-  /* background-color:#00ffff; */
   padding:22px 21px 32px 21px;
   border:none;
   border-radius:8px;
@@ -212,8 +213,6 @@ h1.headingglow {
 .enter-button{
   text-decoration:none;
   color:black;
-  /* background-color:#00ffff; */
-  /* padding:22px 21px 32px 21px; */
   padding: 22px 50px 32px 52px;
   border:none;
   border-radius:8px;
@@ -230,15 +229,13 @@ h1.headingglow {
 }
 
 .portal-logo {
-
-  /* max-width: 1200px; */
   max-width: 55%;
   border-radius: 30px;
 }
 
 
 
-/* .connect-button{
+.connect-button {
   background-color: rgba(0, 255, 255, 0.22);
   border-radius:5px;
   box-shadow: 0px 2px 2px 1px #0F0F0F;
@@ -246,6 +243,10 @@ h1.headingglow {
   cursor:pointer;
   font-family:inherit;
   padding:15px;
-  margin:0 30px;
+  margin:0 10px;
   font-size:23px;
-} */
+}
+
+.connect-button:hover {
+  background-color: transparent;
+}

@@ -40,12 +40,12 @@ const NavBar = ({ accounts, setAccounts }) => {
 
           {/* Connect */}
           {/* {isConnected ? (
-          <Box margin="0 30px">Connect</Box>
-        ) : (
-          <Button className="connect-button" onClick={connectAccount}>
-            Connect
-          </Button>
-        )} */}
+            <Box margin="0 30px">Connect</Box>
+          ) : (
+            <Button className="connect-button" onClick={connectAccount}>
+              Connect
+            </Button>
+          )} */}
         </div>
       </nav>
     </header>

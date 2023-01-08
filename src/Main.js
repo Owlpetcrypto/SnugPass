@@ -66,7 +66,7 @@ const Main = ({ accounts, setAccounts }) => {
         </div>
 
         {/* second section */}
-        <Box>
+        {/* <Box>
           <h1 className="headingglow" id="portal">
             Portal
           </h1>
@@ -82,7 +82,7 @@ const Main = ({ accounts, setAccounts }) => {
 
         <div>
           <hr color="#00ffff" width="80%"></hr>
-        </div>
+        </div> */}
 
         {/* third section */}
 
