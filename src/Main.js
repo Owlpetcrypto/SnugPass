@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import { Box, Flex, Link, Image } from '@chakra-ui/react'
-import TwitterLogo from './assets/twitter.svg'
-import DiscordLogo from './assets/discord.svg'
-import PortalLogo from './assets/portal.jpeg'
+import { useState } from "react";
+import { Box, Flex, Link, Image } from "@chakra-ui/react";
+import TwitterLogo from "./assets/twitter.svg";
+import DiscordLogo from "./assets/discord.svg";
+import PortalLogo from "./assets/portal.jpeg";
+import Mint from "./mint";
 
 function BorderedBox({ title, subtitle, children }) {
   return (
@@ -11,28 +12,31 @@ function BorderedBox({ title, subtitle, children }) {
       <h3 className="subtitle">{subtitle}</h3>
       {children}
     </div>
-  )
+  );
 }
 
 const Main = ({ accounts, setAccounts }) => {
-  const isConnected = Boolean(accounts[0])
+  const isConnected = Boolean(accounts[0]);
 
   async function connectAccount() {
     if (window.ethereum) {
       const accounts = await window.ethereum.request({
-        method: 'eth_requestAccounts',
-      })
-      setAccounts(accounts)
+        method: "eth_requestAccounts",
+      });
+      setAccounts(accounts);
     }
   }
 
   return (
     <Box>
       <Flex justify="center" align="center">
-        <Box fontSize="x-large" marginBottom="50px">
+        <Box fontSize="x-large">
           <h1 className="headingglow">SNUG PASS</h1>
         </Box>
       </Flex>
+
+      <Mint />
+
       <Flex padding="0px 12px" flexDirection="column">
         <div className="snugpassbox">
           <div>
@@ -150,13 +154,13 @@ const Main = ({ accounts, setAccounts }) => {
         <Flex justify="center" align="center">
           <Box className="logos">
             <Link href="https://twitter.com/Snugpass">
-              <Image boxSize={'120px'} src={TwitterLogo} />
+              <Image boxSize={"120px"} src={TwitterLogo} />
             </Link>
           </Box>
 
           <Box className="logos">
             <Link href="https://discord.gg/YFF5eASHkM">
-              <Image boxSize={'120px'} src={DiscordLogo} />
+              <Image boxSize={"120px"} src={DiscordLogo} />
             </Link>
           </Box>
         </Flex>
@@ -168,7 +172,7 @@ const Main = ({ accounts, setAccounts }) => {
             justify="center"
             align="center"
             padding="50px 6%"
-            justifyContent={'space-between'}
+            justifyContent={"space-between"}
           >
             <Box className="snugtitles">
               <h1>SNUG PASS</h1>
@@ -184,7 +188,7 @@ const Main = ({ accounts, setAccounts }) => {
         <p>&copy; 2022 Snug Pass x Snug Labs. ALL RIGHTS RESERVED</p>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
