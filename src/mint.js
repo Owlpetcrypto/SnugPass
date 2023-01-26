@@ -112,11 +112,19 @@ function Mint() {
   };
 
   const connectWalletButton = () => {
-    return <p className="mint-yout-pass-button" onClick={connectWalletHandler}>Connect Wallet</p>;
+    return (
+      <p className="mint-yout-pass-button" onClick={connectWalletHandler}>
+        MINT YOUR PASS
+      </p>
+    );
   };
 
   const mintNftButton = () => {
-    return <p className="mint-yout-pass-button" onClick={mintNftHandler}>MINT YOUR PASS</p>;
+    return (
+      <p className="mint-yout-pass-button" onClick={mintNftHandler}>
+        MINT YOUR PASS
+      </p>
+    );
   };
 
   useEffect(() => {
@@ -159,17 +167,25 @@ function Mint() {
 
   return (
     <div className="hover">
-      <div className="Button-mint">
-        <Button className="connect-button1" onClick={decrement}>
-          <div>-</div>
-        </Button>
-        <div>{mintAmount}</div>
-        <Button className="connect-button2" onClick={increment}>
-          <div>+</div>
-        </Button>
-      </div>
-      <Flex>
-        {currentAccount ? mintNftButton() : connectWalletButton()}
+      <Flex className="mint-text">
+        {currentAccount ? <p>Pulbic is live!</p> : ""}
+      </Flex>
+      {currentAccount ? (
+        <div className="Button-mint">
+          <Button className="connect-button1" onClick={decrement}>
+            <div>-</div>
+          </Button>
+          <div>{mintAmount}</div>
+          <Button className="connect-button2" onClick={increment}>
+            <div>+</div>
+          </Button>
+        </div>
+      ) : (
+        ""
+      )}
+      <Flex>{currentAccount ? mintNftButton() : connectWalletButton()}</Flex>
+      <Flex className="mint-supply">
+        <div>Total Minted: {totalSupply} / 2000 </div>
       </Flex>
     </div>
   );
