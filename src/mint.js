@@ -184,9 +184,9 @@ function Mint() {
         ""
       )}
       <Flex>{currentAccount ? mintNftButton() : connectWalletButton()}</Flex>
-      <Flex className="mint-supply">
-        <div>Total Minted: {totalSupply} / 2000 </div>
-      </Flex>
+      {currentAccount ? <Flex className="mint-supply">
+        <div>Total Minted: {totalSupply} / 2000</div> 
+      </Flex>: ""}
     </div>
   );
 }
