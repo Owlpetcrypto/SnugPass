@@ -264,7 +264,8 @@ h1.headingglow {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .hover {
@@ -293,4 +294,24 @@ h1.headingglow {
   background-position: center, 62% 45%;
   background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.mint-supply {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  font-size: 30px;
+  font-family: 'Chopsic', sans-serif;
+  filter: drop-shadow(0 0 20px white);
+}
+
+.mint-text {
+  justify-content: center;
+  align-items: center;
+}
+
+.mint-text p {
+  font-size: 30px;
+  font-family: 'Chopsic', sans-serif;
+  filter: drop-shadow(0 0 20px white);
 }
