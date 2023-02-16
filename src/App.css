@@ -67,10 +67,24 @@ nav {
 }
 
 
+.grid p {
+  font-size: 1.2rem;
+  margin: 0px auto 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 0px auto 1rem;
+}
+
+.answers {
+  font-size: 1rem;
+  padding-left: 2rem;
+}
+
 .nav-font{
   font-size: 25px;
 }
-
 
 
 div.snugpassbox {
@@ -124,9 +138,14 @@ h1.headingglow {
   -webkit-text-stroke: 2px white;
 }
 
+.mission-statement {
+  font-size: 1rem;
+  max-width: 80%;
+  margin: auto;
+}
 
 .bordered-box {
-  border: 4px solid cyan;
+  border: 4px solid rgba(0, 255, 255, 0.781);
   border-radius: 12px;
   position: relative;
   margin-top: 12px;
@@ -136,9 +155,6 @@ h1.headingglow {
 
 .bordered-box .title {
   font-size: 1rem;
-  /* margin-top: -3rem;
-  margin-left: -1em;
-  margin-bottom: 1px; */
   position: absolute;
   bottom: 100%;
   margin-left: -2rem;
@@ -146,13 +162,16 @@ h1.headingglow {
 }
 
 .bordered-box .subtitle {
-  background-color: rgb(20, 20, 20);
+  background-color: #49e3ee;
   border-radius: 12px;
   max-width: 80%;
   padding-inline: 1em;
   margin-top: -0.75rem;
   margin-left: -2rem;
   max-width: 27rem;
+  color: rgb(20, 20, 20);
+  border: 1.5px solid transparent;
+
   
 }
 
@@ -188,49 +207,14 @@ h1.headingglow {
   max-width: 250px;
 }
 
-.check-the-pitch-deck-button {
-  text-decoration:none;
-  color:black;
-  padding:22px 21px 32px 21px;
-  border:none;
-  border-radius:8px;
-  font-weight:600;
-  width:max-content;
-  margin:50px auto;
-  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
-  content: '';
-  display: block;
-  background-size: 100% 100%, 91% 51%;
-  position: relative;
-  background-position: center, 62% 45%;
-  background-repeat: no-repeat;
-  cursor: pointer;
+.faq-section {
+  padding: 3%;
+  margin-bottom: 1rem;
 }
 
 
 
-.enter-button{
-  text-decoration:none;
-  color:black;
-  padding: 22px 50px 32px 52px;
-  border:none;
-  border-radius:8px;
-  font-weight:600;
-  width:max-content;
-  margin: 50px auto;
-  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
-  content: '';
-  display: block;
-  background-size: 100% 100%, 91% 51%;
-  position: relative;
-  background-position: center, 62% 45%;
-  background-repeat: no-repeat;
-}
-
-.portal-logo {
-  max-width: 55%;
-  border-radius: 30px;
-}
+/* /////////////////////////////////MINT CSS/////////////////////////////// */
 
 .connect-button1 {
   background-color: rgba(0, 255, 255, 0.22);
@@ -315,3 +299,4 @@ h1.headingglow {
   font-family: 'Chopsic', sans-serif;
   filter: drop-shadow(0 0 20px white);
 }
+
