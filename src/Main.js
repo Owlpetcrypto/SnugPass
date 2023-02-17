@@ -59,7 +59,7 @@ const Main = ({ accounts, setAccounts }) => {
         </div>
 
         <Box fontSize="x-large" marginTop="4rem">
-          <h1 className="headingglow" id="thehole">
+          <h1 className="headingglow" id="plan">
             PLAN OF TRAJECTORY
           </h1>
         </Box>

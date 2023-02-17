@@ -37,7 +37,7 @@ nav {
   border: 3px solid #00ffff;
   max-width: 60rem;
   margin: 50px auto;
-  border-radius: 40px;
+  border-radius: 25px;
   background-color: rgba(0, 255, 255, 0.22);
   min-height: 100px;
   display: flex;
@@ -78,7 +78,7 @@ p {
 }
 
 .nav-font{
-  font-size: 25px;
+  font-size: 1.3rem;
 }
 
 
@@ -216,12 +216,17 @@ h1.headingglow {
   margin-bottom: 1rem;
 }
 
+details {
+  border-top: 3px solid hsla(180, 100%, 50%, 0.671);
+  margin-top: 2rem;
+}
+
 
 summary {
   padding: .5em 1.3rem;
   display: flex;
   justify-content: space-between;
-  transition: height 11s ease;
+
 }
 
 .answers {
@@ -240,8 +245,8 @@ summary:after{
 }
 
 details[open] summary {
-  border-bottom: 3px solid cyan;
-  margin-bottom: .5em; 
+  margin-bottom: .5em;
+  transition: all 0.4s ease-in-out;
 }
 
 details[open] summary:after{
@@ -334,4 +339,10 @@ details[open] summary:after{
   filter: drop-shadow(0 0 20px white);
 }
 
+@media (max-width: 430px) {
+  .supply {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
