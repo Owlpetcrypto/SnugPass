@@ -168,7 +168,7 @@ function Mint() {
   return (
     <div className="hover">
       <Flex className="mint-text">
-        {currentAccount ? <p>Pulbic is live!</p> : ""}
+        {currentAccount ? <p>Snug List is Live!</p> : ""}
       </Flex>
       {currentAccount ? (
         <div className="Button-mint">
@@ -184,9 +184,24 @@ function Mint() {
         ""
       )}
       <Flex>{currentAccount ? mintNftButton() : connectWalletButton()}</Flex>
-      {currentAccount ? <Flex className="mint-supply">
-        <div>Total Minted: {totalSupply} / 2000</div> 
-      </Flex>: ""}
+      {currentAccount ? (
+        <Flex className="mint-supply">
+          <div>
+            MINT PRICE: <span className="supply">0.01 ETH</span>
+          </div>
+        </Flex>
+      ) : (
+        ""
+      )}
+      {currentAccount ? (
+        <Flex className="mint-supply">
+          <div>
+            Total Minted: <span className="supply">{totalSupply} / 2000</span>
+          </div>
+        </Flex>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
