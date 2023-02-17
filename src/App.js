@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import './App.css';
-import Main from './Main';
-import NavBar from './NavBar';
+import { useState } from 'react'
+import './App.css'
+import Main from './Main'
+import NavBar from './NavBar'
 
 function App() {
   //changes in UI everytime accounts changes useState will know
@@ -9,12 +9,11 @@ function App() {
   return (
     <div className="background">
       <div className="App">
-        <NavBar accounts={accounts} setAccounts={setAccounts}/>
-        <Main accounts={accounts} setAccounts={setAccounts}/>
+        <NavBar accounts={accounts} setAccounts={setAccounts} />
+        <Main accounts={accounts} setAccounts={setAccounts} />
       </div>
-      {/* <div className="background"></div> */}
-    </div>  
-    );
+    </div>
+  )
 }
 
-export default App;
+export default App
