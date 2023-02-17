@@ -77,11 +77,6 @@ p {
   margin: 0px auto 1rem;
 }
 
-.answers {
-  font-size: 1rem;
-  padding-left: 2rem;
-}
-
 .nav-font{
   font-size: 25px;
 }
@@ -89,7 +84,7 @@ p {
 
 div.snugpassbox {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 4rem;
   padding: 50px 50px;
   background-image: url('./assets/bgborder.png'), url('./assets/bgtransparency.png');
   background-size: 100% 100%;
@@ -222,6 +217,36 @@ h1.headingglow {
 }
 
 
+summary {
+  padding: .5em 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  transition: height 11s ease;
+}
+
+.answers {
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  text-align: left;
+
+}
+
+summary::-webkit-details-marker {
+  display:none;
+}
+
+summary:after{
+  content: "\002B";
+}
+
+details[open] summary {
+  border-bottom: 3px solid cyan;
+  margin-bottom: .5em; 
+}
+
+details[open] summary:after{
+  content: "\00D7";
+}
 
 /* /////////////////////////////////MINT CSS/////////////////////////////// */
 
