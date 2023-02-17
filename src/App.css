@@ -315,3 +315,10 @@ h1.headingglow {
   font-family: 'Chopsic', sans-serif;
   filter: drop-shadow(0 0 20px white);
 }
+
+@media (max-width: 430px) {
+  .supply {
+    display: flex;
+    flex-direction: column;
+  }
+}
