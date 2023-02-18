@@ -137,7 +137,7 @@ const Main = ({ accounts, setAccounts }) => {
         </details>
         <details>
           <summary>&#9670; How many Snug Passes can I mint?</summary>
-          <p className="answers">&#9671; Up to 2 passes</p>
+          <p className="answers">&#9671; Up to 3 passes</p>
         </details>
         <details>
           <summary>&#9670; What utilities does Snug Pass provide?</summary>
