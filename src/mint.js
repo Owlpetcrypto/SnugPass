@@ -170,7 +170,7 @@ function Mint() {
   return (
     <div className="hover">
       <Flex className="mint-text">
-        {currentAccount ? <p>Snug List is Live!</p> : ""}
+        {currentAccount ?  <p>Mint is not live {/* <p>Snug List is Live!</p> <p>Public is Live!</p> */}</p> : ""}
       </Flex>
       {currentAccount ? (
         <div className="Button-mint">
