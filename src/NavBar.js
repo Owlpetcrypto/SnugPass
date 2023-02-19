@@ -20,7 +20,7 @@ function NavBar() {
           <Link className="nav-font" href="#portal">
             Portal
           </Link>
-          <Link className="nav-font" href="#thehole">
+          <Link className="nav-font" href="#plan">
             Plan of Trajectory
           </Link>
           <Link className="nav-font" href="#faq">
