@@ -17,10 +17,10 @@ const addresses = [
   "0xB9277bb50FA9bD8Da38085622f5B782D47a64339",
   "0x9A41426ae9C88110188276bAF8046dC420005249",
   "0xD028780dDCBBD7930a9C27da65D3ca6f440E5127",
-  "0x0AD4189a533d747AdbDA9afC8108c5B239dD73B4"
+  "0x0AD4189a533d747AdbDA9afC8108c5B239dD73B4",
 ]; // whitelisted address
 
-const contractAddress = "0x0AE2218f693aD02DA899F8c019Fa8825c7438b9B";
+const contractAddress = "0xEc3013634b69928a4daB8bBbe82a3c218e84eEf7";
 const API_KEY = ""; // Your api key from your ethercan account
 
 function Mint() {
@@ -96,7 +96,9 @@ function Mint() {
         // let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
         console.log("proof", proof);
 
-        let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
+        let nftTxn = await nftContract.presaleMint(amount, proof, {
+          value: ethers.utils.parseEther(cost.toString()),
+        });
         console.log("Minting... please wait!");
         await nftTxn.wait();
 
@@ -147,20 +149,20 @@ function Mint() {
   function increment() {
     //setCount(prevCount => prevCount+=1);
     setMintAmount(function (prevCount) {
-      if (prevCount < 2) {
+      if (prevCount < 3) {
         return (prevCount += 1);
       } else {
-        return (prevCount = 2);
+        return (prevCount = 3);
       }
     });
   }
 
   function decrement() {
     setMintAmount(function (prevCount) {
-      if (prevCount === 0) {
-        return (prevCount -= 1);
-      } else {
+      if (prevCount === 1) {
         return (prevCount = 1);
+      } else {
+        return prevCount - 1;
       }
     });
   }
@@ -187,7 +189,7 @@ function Mint() {
       {currentAccount ? (
         <Flex className="mint-supply">
           <div>
-            MINT PRICE: <span className="supply">0.01 ETH</span>
+            MINT PRICE: <span className="supply">0.1 ETH</span>
           </div>
         </Flex>
       ) : (
