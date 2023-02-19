@@ -179,7 +179,7 @@ function Mint() {
           ''
         )}
       </Flex>
-      {/* {currentAccount ? (
+      {currentAccount ? (
         <div className="Button-mint">
           <Button className="connect-button1" onClick={decrement}>
             <div>-</div>
@@ -210,7 +210,7 @@ function Mint() {
         </Flex>
       ) : (
         ''
-      )} */}
+      )}
     </div>
   )
 }
