@@ -395,14 +395,12 @@ footer {
 
 .wallet-check {
   text-decoration:none;
-  color:black;
-  padding:38px 37px 48px 37px;
-  border:none;
+  color:white;
+  border:2px solid cyan;
   border-radius:8px;
   font-weight:600;
-  width:max-content;
-  margin: 30px auto;
-  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  width:30rem;
+  margin: 2rem auto 1rem;
   content: '';
   display: block;
   background-size: 100% 100%, 91% 51%;
@@ -410,12 +408,23 @@ footer {
   background-position: center, 62% 45%;
   background-repeat: no-repeat;
   cursor: pointer;
+  background-color: rgba(0, 255, 255, 0.22);
+}
+
+@media (max-width: 430px) {
+  .wallet-check {
+    width: 15rem;
+  }
+}
+
+button {
+  cursor: pointer;
 }
 
 .button-check {
   text-decoration:none;
   color:black;
-  padding:38px 37px 48px 37px;
+  padding:20px 40px 33px 40px;
   border:none;
   border-radius:8px;
   font-weight:600;
@@ -429,23 +438,37 @@ footer {
   position: relative;
   background-position: center, 62% 45%;
   background-repeat: no-repeat;
-  cursor: pointer;
 }
 
 .inside-button-check {
   border: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
-  font-family: Verdana;
+
 }
 
 .inside-wallet-check {
   border: none;
   background-color: transparent;
-  width: 200px;
+  width: 25rem;
+  height: 50px;
   text-align: center;
+  color: white;
+  font-weight: bold;
 }
+
+@media (max-width: 430px) {
+  .inside-wallet-check {
+    width: 15rem;
+  }
+}
+
+
+*:focus {
+  outline: none;
+}
+
 
 .text {
   margin-top: 20px;

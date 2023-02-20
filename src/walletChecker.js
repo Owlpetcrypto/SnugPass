@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { addresses } from "./addresses";
+import React, { useState } from 'react'
+import { addresses } from './addresses'
 
 function WalletChecker() {
-  const [address, setAddress] = useState("");
-  const [result, setResult] = useState("");
+  const [address, setAddress] = useState('')
+  const [result, setResult] = useState('')
 
   function handleAddressChange(event) {
-    setAddress(event.target.value);
+    setAddress(event.target.value)
   }
 
   function handleCheckAddress() {
-    const isInArray = addresses.includes(address);
+    const isInArray = addresses.includes(address)
 
     if (isInArray) {
-      setResult("The address is whitelisted");
+      setResult('This address is snug listed')
     } else {
-      setResult("The address is not whitelisted");
+      setResult('This address is not snug listed')
     }
   }
 
@@ -30,7 +30,7 @@ function WalletChecker() {
           type="text"
           id="address"
           value={address}
-          placeholder="Write wallet here..."
+          placeholder="ENTER WALLET"
           onChange={handleAddressChange}
         />
       </div>
@@ -40,11 +40,11 @@ function WalletChecker() {
           className="inside-button-check"
           onClick={handleCheckAddress}
         >
-          Check address
+          CHECK ADDRESS
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default WalletChecker;
+export default WalletChecker
