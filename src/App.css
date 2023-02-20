@@ -375,3 +375,81 @@ footer {
   }
 }
 
+.second-display {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.first-display:not(.second-display) {
+  opacity: 0;
+}
+
+.second-display:not(.first-display) {
+  opacity: 1;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-check {
+  text-decoration:none;
+  color:black;
+  padding:38px 37px 48px 37px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  width:max-content;
+  margin: 30px auto;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.button-check {
+  text-decoration:none;
+  color:black;
+  padding:38px 37px 48px 37px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  width:max-content;
+  margin: 30px auto;
+  margin-bottom: 50px;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.inside-button-check {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana;
+}
+
+.inside-wallet-check {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+  text-align: center;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: 'Chopsic', sans-serif;
+  filter: drop-shadow(0 0 20px white);
+}
