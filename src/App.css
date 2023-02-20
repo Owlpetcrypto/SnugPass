@@ -358,3 +358,68 @@ details[open] summary:after{
 .second-display:not(.first-display) {
   opacity: 1;
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.wallet-check {
+  text-decoration:none;
+  color:black;
+  padding:38px 37px 48px 37px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  width:max-content;
+  margin: 30px auto;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.button-check {
+  text-decoration:none;
+  color:black;
+  padding:38px 37px 48px 37px;
+  border:none;
+  border-radius:8px;
+  font-weight:600;
+  width:max-content;
+  margin: 30px auto;
+  margin-bottom: 50px;
+  background-image: url('./assets/buttonborder.png'), url('./assets/buttonbg.png');
+  content: '';
+  display: block;
+  background-size: 100% 100%, 91% 51%;
+  position: relative;
+  background-position: center, 62% 45%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.insite-button-check {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana;
+}
+
+.insite-wallet-check {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: 'Chopsic', sans-serif;
+  filter: drop-shadow(0 0 20px white);
+}
