@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Flex, Button } from '@chakra-ui/react'
+
 import { ethers } from "ethers";
 import { keccak256 } from "ethers/lib/utils";
 import MerkleTree from "merkletreejs";
@@ -9,6 +10,7 @@ import { addresses } from "./addresses";
 
 const contractAddress = "0xEc3013634b69928a4daB8bBbe82a3c218e84eEf7";
 const API_KEY = ""; // Your api key from your ethercan account
+
 
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1);
@@ -96,6 +98,7 @@ function Mint() {
         console.log("Initialize payment");
         let cost = 0.049 * amount;
         // let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
+
         console.log("proof", proof);
 
         if (isProofSet) {
@@ -109,6 +112,7 @@ function Mint() {
         } else {
           console.log("Proof has not been set yet.");
         }
+
       }
     } catch (err) {
       console.log(err);
@@ -144,9 +148,11 @@ function Mint() {
     //setCount(prevCount => prevCount+=1);
     setMintAmount(function (prevCount) {
       if (prevCount < 3) {
-        return (prevCount += 1);
+        return (prevCount += 1)
       } else {
+
         return (prevCount = 3);
+
       }
     });
   }
@@ -154,15 +160,18 @@ function Mint() {
   function decrement() {
     setMintAmount(function (prevCount) {
       if (prevCount === 1) {
-        return (prevCount = 1);
+        return (prevCount = 1)
       } else {
+
         return prevCount - 1;
+
       }
     });
   }
 
   return (
     <div className="hover">
+
       {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
         {showFirst ? (
           <div className="first-display"></div>
@@ -195,6 +204,7 @@ function Mint() {
             </Flex>
         </div>
         )}
+
     </div>
   );
 }

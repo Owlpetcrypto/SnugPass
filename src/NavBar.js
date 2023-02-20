@@ -18,16 +18,16 @@ function NavBar() {
             <Image boxSize={'75px'} src={SnugLogo} />
           </div>
           <Link className="nav-font" href="#portal">
-            Portal
+            PORTAL
           </Link>
           <Link className="nav-font" href="#plan">
-            Plan of Trajectory
+            PLAN OF TRAJECTORY
           </Link>
           <Link className="nav-font" href="#faq">
             FAQ
           </Link>
           <Link className="nav-font" href="#gravityconnect">
-            Socials
+            SOCIALS
           </Link>
         </div>
       </nav>
