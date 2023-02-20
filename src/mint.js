@@ -33,6 +33,7 @@ function Mint() {
   let [totalSupply, setSupply] = useState("");
 
   const [proof, setProof] = useState([""]);
+  const [isProofSet, setIsProofSet] = useState(false);
 
   let leaf = "";
 
@@ -43,13 +44,8 @@ function Mint() {
 
   const handleButtonClick = async () => {
     await connectWalletHandler();
-    setTimeout(async () => {
-      await mintNftHandler();
-    }, 1000); // wait for 1 second before calling the second function
   };
   
-  
-
   const checkWalletIsConnected = async () => {
     const { ethereum } = window;
 
@@ -68,6 +64,7 @@ function Mint() {
 
       leaf = keccak256(accounts[0]); // accounts from accounts using accountsconnect/metamask
       setProof(tree.getProof(leaf).map((x) => buf2hex(x.data)));
+      setIsProofSet(true);
 
       console.log("proof", proof);
       console.log(accounts);
@@ -111,22 +108,23 @@ function Mint() {
 
         console.log("Initialize payment");
         let cost = 0.05 * amount;
-        // let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
+        let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
         console.log("proof", proof);
 
-        let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
-        console.log("Minting... please wait!");
-        await nftTxn.wait();
-
-        console.log(
-          `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`
-        );
-      } else {
-        console.log("Ethereum object doesn't exist");
+        if (isProofSet) {
+          // let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
+          console.log("Minting... please wait!");
+          await nftTxn.wait();
+    
+          console.log(
+            `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`
+          );
+        } else {
+          console.log("Proof has not been set yet.");
+        }};
+      } catch (err) {
+        console.log(err);
       }
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   useEffect(() => {
@@ -143,6 +141,12 @@ function Mint() {
     const mintedTokens = await response.json();
     setSupply(mintedTokens.result);
   }
+
+  useEffect(() => {
+    if (isProofSet) {
+      mintNftHandler();
+    }
+  }, [isProofSet]);
 
   useEffect(() => {
     fetchData();
