@@ -403,7 +403,7 @@ details[open] summary:after{
   cursor: pointer;
 }
 
-.insite-button-check {
+.inside-button-check {
   border: none;
   background-color: transparent;
   font-size: 20px;
@@ -411,10 +411,11 @@ details[open] summary:after{
   font-family: Verdana;
 }
 
-.insite-wallet-check {
+.inside-wallet-check {
   border: none;
   background-color: transparent;
   width: 200px;
+  text-align: center;
 }
 
 .text {

@@ -26,7 +26,7 @@ function WalletChecker() {
       </div>
       <div className="wallet-check">
         <input
-          className="insite-wallet-check"
+          className="inside-wallet-check"
           type="text"
           id="address"
           value={address}
@@ -37,7 +37,7 @@ function WalletChecker() {
       <div className="button-check">
         <button
           type="button"
-          className="insite-button-check"
+          className="inside-button-check"
           onClick={handleCheckAddress}
         >
           Check address
