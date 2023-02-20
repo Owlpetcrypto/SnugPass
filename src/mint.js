@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Flex, Button } from '@chakra-ui/react'
 import { ethers } from "ethers";
 import { keccak256 } from "ethers/lib/utils";
 import MerkleTree from "merkletreejs";
@@ -94,13 +95,11 @@ function Mint() {
 
         console.log("Initialize payment");
         let cost = 0.049 * amount;
-        let nftTxn = await nftContract.mint(amount, {
-          value: ethers.utils.parseEther(cost.toString()),
-        });
+        // let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
         console.log("proof", proof);
 
         if (isProofSet) {
-          // let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
+          let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
           console.log("Minting... please wait!");
           await nftTxn.wait();
 
@@ -164,9 +163,7 @@ function Mint() {
 
   return (
     <div className="hover">
-      <WalletChecker />
-
-      {/* {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
+      {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
         {showFirst ? (
           <div className="first-display"></div>
         ) : (
@@ -188,7 +185,7 @@ function Mint() {
           </Flex>
             <Flex className="mint-supply">
               <div>
-                MINT PRICE: <span className="supply">0.1 ETH</span>
+                MINT PRICE: <span className="supply">0.049 ETH</span>
               </div>
             </Flex>
             <Flex className="mint-supply">
@@ -197,7 +194,7 @@ function Mint() {
               </div>
             </Flex>
         </div>
-        )} */}
+        )}
     </div>
   );
 }
