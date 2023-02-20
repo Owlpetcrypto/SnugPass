@@ -346,3 +346,15 @@ details[open] summary:after{
   }
 }
 
+.second-display {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.first-display:not(.second-display) {
+  opacity: 0;
+}
+
+.second-display:not(.first-display) {
+  opacity: 1;
+}

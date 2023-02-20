@@ -177,9 +177,9 @@ function Mint() {
     <div className="hover">
       {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
         {showFirst ? (
-          ""
+          <div className="first-display"></div>
         ) : (
-          <div>
+          <div className="second-display">
           <Flex className="mint-text">
             <p>Snug List is Live!</p>
           </Flex>
