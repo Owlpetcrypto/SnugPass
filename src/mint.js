@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 import { Flex, Button } from '@chakra-ui/react'
+
 import { ethers } from "ethers";
 import { keccak256 } from "ethers/lib/utils";
 import MerkleTree from "merkletreejs";
@@ -18,32 +19,37 @@ function Mint() {
   const [buttonClicked, setButtonClicked] = useState(false);
   const [currentAccount, setCurrentAccount] = useState(null);
 
-  let [totalSupply, setSupply] = useState("");
+
+  let [totalSupply, setSupply] = useState('')
+
 
   const [proof, setProof] = useState([""]);
 
-  let leaf = "";
+
+  let leaf = ''
 
   const handleClick = () => {
-    setShowFirst(!showFirst);
-    setButtonClicked(true);
-  };
+    setShowFirst(!showFirst)
+    setButtonClicked(true)
+  }
+
 
   const checkWalletIsConnected = async () => {
-    const { ethereum } = window;
+    const { ethereum } = window
 
     if (!ethereum) {
-      console.log("Make sure you have Metamask installed!");
-      return;
+      console.log('Make sure you have Metamask installed!')
+      return
     } else {
-      console.log("Wallet exist! We are ready to go!");
-      const accounts = await ethereum.request({ method: "eth_accounts" });
+      console.log('Wallet exist! We are ready to go!')
+      const accounts = await ethereum.request({ method: 'eth_accounts' })
 
-      const leaves = addresses.map((x) => keccak256(x));
-      const tree = new MerkleTree(leaves, keccak256, { sortPairs: true });
-      const buf2hex = (x) => "0x" + x.toString("hex");
+      const leaves = addresses.map((x) => keccak256(x))
+      const tree = new MerkleTree(leaves, keccak256, { sortPairs: true })
+      const buf2hex = (x) => '0x' + x.toString('hex')
 
-      console.log("root", buf2hex(tree.getRoot()));
+      console.log('root', buf2hex(tree.getRoot()))
+
 
       leaf = keccak256(accounts[0]); // accounts from accounts using accountsconnect/metamask
       setProof(tree.getProof(leaf).map((x) => buf2hex(x.data)));
@@ -55,39 +61,41 @@ function Mint() {
         const account = accounts[0];
         console.log("Found an authorized account: ", account);
         setCurrentAccount(account);
+
       } else {
-        console.log("No authorized account found");
+        console.log('No authorized account found')
       }
     }
-  };
+  }
 
   const connectWalletHandler = async () => {
-    const { ethereum } = window;
+    const { ethereum } = window
 
     if (!ethereum) {
-      alert("Please install Metamask!");
+      alert('Please install Metamask!')
     }
 
     try {
       const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      console.log("Found an account! Address: ", accounts[0]);
-      setWalletConnected(true);
+        method: 'eth_requestAccounts',
+      })
+      console.log('Found an account! Address: ', accounts[0])
+      setWalletConnected(true)
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
 
   const mintNftHandler = async () => {
     try {
-      const { ethereum } = window;
+      const { ethereum } = window
 
       if (ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
-        const signer = provider.getSigner();
-        const nftContract = new ethers.Contract(contractAddress, abi, signer);
-        let amount = mintAmount;
+        const provider = new ethers.providers.Web3Provider(ethereum)
+        const signer = provider.getSigner()
+        const nftContract = new ethers.Contract(contractAddress, abi, signer)
+        let amount = mintAmount
+
 
         console.log("Initialize payment");
 
@@ -109,15 +117,18 @@ function Mint() {
         console.log("Minting... please wait!");
         await nftTxn.wait();
 
+
           console.log(
-            `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`
-          );
+            `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`,
+          )
         } else {
+
       }
     } catch (err) {
-      console.log(err);
+      console.log(err)
     }
-  };
+  }
+
 
   const connectWalletButton = () => {
     return (
@@ -135,24 +146,27 @@ function Mint() {
     );
   };
 
+
   async function fetchData() {
     const response = await fetch(
-      `https://api-goerli.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${API_KEY}`
-    );
-    const mintedTokens = await response.json();
-    setSupply(mintedTokens.result);
+      `https://api-goerli.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${API_KEY}`,
+    )
+    const mintedTokens = await response.json()
+    setSupply(mintedTokens.result)
   }
 
   useEffect(() => {
+
     if (renderCount < 1 && walletConnected) {
       setRenderCount(renderCount + 1);
       checkWalletIsConnected();
     }
   }, [walletConnected, renderCount]);
 
+
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   function increment() {
     //setCount(prevCount => prevCount+=1);
@@ -160,9 +174,11 @@ function Mint() {
       if (prevCount < 3) {
         return (prevCount += 1);
       } else {
+
         return (prevCount = 3);
+
       }
-    });
+    })
   }
 
   function decrement() {
@@ -170,17 +186,22 @@ function Mint() {
       if (prevCount === 1) {
         return (prevCount = 1);
       } else {
+
         return prevCount - 1;
+
       }
-    });
+    })
   }
 
   return (
     <div className="hover">
+      <WalletChecker />
+
 
     <WalletChecker />
 
      {/* {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
+
         {showFirst ? (
           <div className="first-display"></div>
         ) : (
@@ -208,10 +229,14 @@ function Mint() {
                 Total Minted: <span className="supply">{totalSupply} / 2000</span>
               </div>
             </Flex>
+
         </div> 
+
         )} */}
     </div>
-  );
+  )
 }
 
+
 export default Mint;
+
