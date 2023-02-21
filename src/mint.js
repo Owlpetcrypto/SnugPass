@@ -178,7 +178,7 @@ function Mint() {
   return (
     <div className="hover">
 
-      <WalletChecker />
+    <WalletChecker />
 
      {/* {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
         {showFirst ? (
