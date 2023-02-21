@@ -8,8 +8,8 @@ import abi from './abi/abi.json'
 import WalletChecker from './walletChecker'
 import { addresses } from './addresses'
 
-const contractAddress = '0xEc3013634b69928a4daB8bBbe82a3c218e84eEf7'
-const API_KEY = '' // Your api key from your ethercan account
+const contractAddress = '0xDC7a4ac5d2C479fE110B4dA4D114a845D516CC7f'
+const API_KEY = 'QAJMTYN2H7CWPT8KYNCSWM5WG6UVMB3M8Z' // Your api key from your ethercan account
 
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1)
@@ -111,12 +111,14 @@ function Mint() {
         //   cost = 0.177
         // }
 
-        let nftTxn = await nftContract.mint(amount, {
-          value: ethers.utils.parseEther(cost.toString()),
-        })
+        // let nftTxn = await nftContract.mint(amount, {
+        //   value: ethers.utils.parseEther(cost.toString()),
+        // })
         console.log('proof', proof)
 
-        // let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
+        let nftTxn = await nftContract.presaleMint(amount, proof, {
+          value: ethers.utils.parseEther(cost.toString()),
+        })
         console.log('Minting... please wait!')
         await nftTxn.wait()
 
@@ -217,7 +219,7 @@ function Mint() {
           </Flex>
           <Flex className="mint-supply">
             <div>
-              MINT PRICE: <span className="supply">0.05 ETH</span>
+              MINT PRICE: <span className="supply">0.049 ETH</span>
             </div>
           </Flex>
           <Flex className="mint-supply">
