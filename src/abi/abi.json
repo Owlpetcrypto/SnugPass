@@ -18,6 +18,7 @@
   { "inputs": [], "name": "MintToZeroAddress", "type": "error" },
   { "inputs": [], "name": "MintZeroQuantity", "type": "error" },
   { "inputs": [], "name": "NoContracts", "type": "error" },
+  { "inputs": [], "name": "NotAllowed", "type": "error" },
   { "inputs": [], "name": "NotAllowlisted", "type": "error" },
   { "inputs": [], "name": "NotTheDev", "type": "error" },
   {
@@ -312,6 +313,13 @@
   },
   {
     "inputs": [],
+    "name": "payDev",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "presaleActive",
     "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
     "stateMutability": "view",
@@ -342,6 +350,13 @@
     "type": "function"
   },
   {
+    "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "name": "publicMintTracker",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "publicSaleActive",
     "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
@@ -353,6 +368,13 @@
     "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "revealed",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -503,6 +525,13 @@
   {
     "inputs": [],
     "name": "togglePublicSale",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "toggleReveal",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
