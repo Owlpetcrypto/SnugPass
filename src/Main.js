@@ -40,16 +40,16 @@ const Main = ({ accounts, setAccounts }) => {
       <Flex padding="0px 12px" flexDirection="column">
         <div className="snugpassbox">
           <div>
-            <p>The future of Web3 with our game-changing project:</p>
+            <p>THE FUTURE OF WEB3 WITH OUR GAME-CHANGING PROJECT:</p>
             <p>
-              A Web3 infrastructure ecosystem that uses NFT tech to verify
-              digital ownership in Web2 company systems, an easy-to-use product
-              for building services without <em>BIG</em> developers.
+              A WEB3 INFRASTRUCTURE ECOSYSTEM THAT USES NFT TECHNOLOGY TO VERIFY
+              DIGITAL OWNERSHIP IN WEB2 COMPANY SYSTEMS, AN EASY-TO-USE PRODUCT
+              FOR BUILDING SERVICES WITHOUT <em>BIG</em> DEVELOPERS
             </p>
             <br></br>
             <p>
-              Snug Pass will pave the way for Web2 companies to make the
-              transition
+              SNUG PASS WILL PAVE THE WAY FOR WEB2 COMPANIES TO MAKE THE
+              TRANSITION
             </p>
           </div>
         </div>
@@ -66,45 +66,44 @@ const Main = ({ accounts, setAccounts }) => {
 
         <div className="grid">
           <BorderedBox subtitle="Phase 1">
-            <p>&#9670; Launch 2000 collection passes with Lifetime access</p>
-            <p>&#9670; Highlight importance of NFT Tech</p>
+            <p>&#9670; LAUNCH 2000 COLLECTION PASSES WITH LIFETIME ACCESS</p>
+            <p>&#9670; HIGHLIGHT THE IMPORTANCE OF NFT TECHNOLOGIES</p>
             <p>
-              &#9670; An exclusive look at our in-depth plans with sneak peeks
-              of product testing
+              &#9670; AN EXCLUSIVE LOOK AT OUR IN-DEPTH TRAJECTORY WITH SNEAK
+              PEEKS OF PRODUCT TESTINGS
             </p>
           </BorderedBox>
 
           <BorderedBox subtitle="Phase 2">
             <p>
-              &#9670; Launch 5 main products: Web3 shopify, Connect-to-Wallet
-              software, Web2.5 payment gateways, Smart escrow and Custom
-              Contract Generator
+              &#9670; LAUNCH 5 CORE PRODUCTS: WEB3 SHOPIFY, CONNECT-TO-WALLET
+              SOFTWARE, WEB2.5 PAYMENT GATEWAYS, SMART ESCROW AND CUSTOM
+              CONTRACT GENERATOR
             </p>
             <p>
-              &#9670; Utilise mint funds to expand the development of the
-              products. Additionally, public beta testers can enjoy a FREE 7-day
-              trial.
+              &#9670; UTILISE MINT FUNDS TO EXPAND PRODUCT DEVELOPMENT. PUBLIC
+              BETA TESTERS CAN ENJOY A FREE 7-DAY TRIAL
             </p>
           </BorderedBox>
 
           <BorderedBox subtitle="Phase 3">
             <p>
-              &#9670; Apply monthly subscription for non-holders; The money
-              raised is reinvested in developing the product ecosystem and
-              expanding the brand
+              &#9670; APPLY MONTHLY SUBSCRIPTION FOR NON-HOLDERS; THE MONEY
+              RAISED IS REINVESTED INTO THE PRODUCT ECOSYSTEM AND EXPANDING THE
+              BRAND
             </p>
             <p>
-              &#9670; Schedule IRL events to promote SnugPass NFT innovations
+              &#9670; SCHEDULE IRL EVENTS TO PROMOTE SNUG PASS NFT INNOVATIONS
             </p>
           </BorderedBox>
 
           <BorderedBox subtitle="ECOSYSTEM">
             <p>
-              &#9670; NFT Tech: Our products provide equivalent services to the
-              web2 version, but they rely entirely on blockchain technology,
-              utilizing dynamic smart contracts, tokenization, and tracking
-              systems. This enhances decentralization, transparency, and
-              security
+              &#9670; NFT TECHNOLOGY: OUR PRODUCTS PROVIDE EQUIVALENT SERVICES
+              TO WEB2, BUT THEY RELY ENTIRELY ON BLOCKCHAIN TECHNOLOGY,
+              UTILIZING DYANMIC SMART CONTRACTS, TOKENIZATION, AND TRACKING
+              SYSTEMS. THIS WILL ENHANCE DECENTRALIZATION, TRANSPARENCY, AND
+              SECURITY
             </p>
           </BorderedBox>
         </div>
@@ -126,38 +125,39 @@ const Main = ({ accounts, setAccounts }) => {
       </Box>
       <div className="faq-section">
         <details>
-          <summary>&#9670; What is the total supply of Snug Pass?</summary>
-          <p className="answers">&#9671; 2000 lifetime passes</p>
+          <summary>&#9670; WHAT IS THE TOTAL SUPPLY OF SNUG PASS?</summary>
+          <p className="answers">&#9671; 2000 LIFETIME PASSES</p>
         </details>
         <details>
           <summary>
-            &#9670; What is the Snug List and Public mint price?
+            &#9670; WHAT IS THE SNUG LIST AND PUBLIC MINT PRICE?
           </summary>
-          <p className="answers">&#9671; 0.1 ETH</p>
+          <p className="answers">&#9671; 0.049 ETH AND 0.059 </p>
         </details>
         <details>
-          <summary>&#9670; How many Snug Passes can I mint?</summary>
-          <p className="answers">&#9671; Up to 3 passes</p>
+          <summary>&#9670; HOW MANY SNUG PASSES CAN I MINT?</summary>
+          <p className="answers">&#9671; UP TO 3 PASSES</p>
         </details>
         <details>
-          <summary>&#9670; What utilities does Snug Pass provide?</summary>
+          <summary>&#9670; WHAT UTILITIES DOES SNUG PASS PROVIDE?</summary>
           <p className="answers">
-            &#9671; By obtaining a Snug Pass, you will gain exclusive, lifetime
-            access to our products and technologies ahead of everyone else.
-            Rather than paying a recurring monthly fee, this pass allows you to
-            join our collaborative and exclusive community to contribute to our
-            ecosystem. As a result, you'll become one of the pioneers of Snug
-            Pass technology.
+            &#9671; BY OBTAINING A SNUG PASS, YOU WILL GAIN EXCLUSIVE, LIFETIME
+            ACCESS TO OUR PRODUCTS AND TECHNOLOGIES AHEAD OF EVERYONE ELSE.
+            RATHER THAN PAYING A RECURRING MONTHLY FEE, THIS PASS ALLOWS YOU TO
+            JOIN OUR COLLABORATIVE AND EXCLUSIVE COMMUNITY AND BECOME ONE OF THE
+            PIONEERS OF SNUG PASS TECHNOLOGY
           </p>
         </details>
         <details>
-          <summary>&#9670; What is the benefit of holding 2 passes?</summary>
+          <summary>
+            &#9670; WHAT IS THE BENEFIT OF HOLDING 2 OR MORE PASSES?
+          </summary>
           <p className="answers">
-            &#9671; While having one pass grants you full access to the Snug
-            ecosystem, holding two passes offers additional benefits, including
-            future rewards and perks. These may include owning a share in the
-            company and receiving a percentage of its profits. Essentially,
-            having two passes is superior to having one.
+            &#9671; WHILE HAVING ONE PASS GRANTS YOU FULL ACCESS TO THE SNUG
+            ECOSYSTEM, HOLDING TWO OR MORE PASSES OFFERS ADDITIONAL BENEFITS,
+            INCLUDING FUTURE REWARDS AND PERKS. THESE MAY INCLUDE OWNING A SHARE
+            IN THE COMPANY AND RECEIVING A PERCENTAGE OF ITS PROFITS.
+            ESSENTIALLY, HAVING TWO PASSES IS SUPERIOR TO HAVING ONE
           </p>
         </details>
       </div>
@@ -206,9 +206,25 @@ const Main = ({ accounts, setAccounts }) => {
         </Flex>
       </Box>
 
-      <Box>
-        <p>&copy; 2022 Snug Pass x Snug Labs. ALL RIGHTS RESERVED</p>
-      </Box>
+      <footer id="contact">
+        <ul className="footer__nav">
+          <li>
+            <a href="#portal"> PORTAL</a>
+          </li>
+          <li>
+            <a href="#plan"> PLAN OF TRAJECTORY</a>
+          </li>
+          <li>
+            <a href="#faq"> FAQ</a>
+          </li>
+          <li>
+            <a href="#gravityconnect"> GRAVITY CONNECT</a>
+          </li>
+        </ul>
+        <div className="footer__copyright">
+          <small>&copy; 2022 Snug Pass x Snug Labs. ALL RIGHTS RESERVED</small>
+        </div>
+      </footer>
     </Box>
   )
 }

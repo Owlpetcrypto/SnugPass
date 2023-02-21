@@ -8,7 +8,7 @@ import WalletChecker from "./walletChecker";
 import { addresses } from "./addresses";
 
 const contractAddress = "0xEc3013634b69928a4daB8bBbe82a3c218e84eEf7";
-const API_KEY = "VRRW7A39QJDDVF698UJFWU1R9V5FABRMQJ"; // Your api key from your ethercan account
+const API_KEY = ""; // Your api key from your ethercan account
 
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1);
