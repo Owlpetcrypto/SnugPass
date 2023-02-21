@@ -95,12 +95,21 @@ function Mint() {
         let cost = amount
 
         if (amount === 1) {
-          cost = 0.05
+          cost = 0.049
         } else if (amount === 2) {
-          cost = 0.1
+          cost = 0.098
         } else if (amount === 3) {
-          cost = 0.15
+          cost = 0.147
         }
+
+        // //public
+        // if (amount === 1) {
+        //   cost = 0.059
+        // } else if (amount === 2) {
+        //   cost = 0.118
+        // } else if (amount === 3) {
+        //   cost = 0.177
+        // }
 
         let nftTxn = await nftContract.mint(amount, {
           value: ethers.utils.parseEther(cost.toString()),
@@ -181,39 +190,43 @@ function Mint() {
     <div className="hover">
       <WalletChecker />
 
-      {/* {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
+      {/* {!buttonClicked && (
+        <div className="mint-yout-pass-button" onClick={handleClick}>
+          MINT YOUR PASS
+        </div>
+      )}
 
-        {showFirst ? (
-          <div className="first-display"></div>
-        ) : (
-          <div className="second-display">
+      {showFirst ? (
+        <div className="first-display"></div>
+      ) : (
+        <div className="second-display">
           <Flex className="mint-text">
             <p>Snug List is Live!</p>
           </Flex>
-            <div className="Button-mint">
-              <Button className="connect-button1" onClick={decrement}>
-                <div>-</div>
-              </Button>
-              <div>{mintAmount}</div>
-              <Button className="connect-button2" onClick={increment}>
-                <div>+</div>
-              </Button>
+          <div className="Button-mint">
+            <Button className="connect-button1" onClick={decrement}>
+              <div>-</div>
+            </Button>
+            <div>{mintAmount}</div>
+            <Button className="connect-button2" onClick={increment}>
+              <div>+</div>
+            </Button>
+          </div>
+          <Flex>
+            {currentAccount ? mintNftButton() : connectWalletButton()}
+          </Flex>
+          <Flex className="mint-supply">
+            <div>
+              MINT PRICE: <span className="supply">0.05 ETH</span>
             </div>
-            <Flex>{currentAccount ? mintNftButton() : connectWalletButton()}</Flex>
-            <Flex className="mint-supply">
-              <div>
-                MINT PRICE: <span className="supply">0.05 ETH</span>
-              </div>
-            </Flex>
-            <Flex className="mint-supply">
-              <div>
-                Total Minted: <span className="supply">{totalSupply} / 2000</span>
-              </div>
-            </Flex>
-
-        </div> 
-
-        )} */}
+          </Flex>
+          <Flex className="mint-supply">
+            <div>
+              Total Minted: <span className="supply">{totalSupply} / 2000</span>
+            </div>
+          </Flex>
+        </div>
+      )} */}
     </div>
   )
 }

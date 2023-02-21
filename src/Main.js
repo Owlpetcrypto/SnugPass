@@ -132,7 +132,7 @@ const Main = ({ accounts, setAccounts }) => {
           <summary>
             &#9670; WHAT IS THE SNUG LIST AND PUBLIC MINT PRICE?
           </summary>
-          <p className="answers">&#9671; 0.049 ETH AND 0.059 </p>
+          <p className="answers">&#9671; 0.049 ETH AND 0.059 ETH</p>
         </details>
         <details>
           <summary>&#9670; HOW MANY SNUG PASSES CAN I MINT?</summary>
