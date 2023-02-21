@@ -8,7 +8,7 @@ import WalletChecker from "./walletChecker";
 import { addresses } from "./addresses";
 
 const contractAddress = "0xEc3013634b69928a4daB8bBbe82a3c218e84eEf7";
-const API_KEY = ""; // Your api key from your ethercan account
+const API_KEY = "VRRW7A39QJDDVF698UJFWU1R9V5FABRMQJ"; // Your api key from your ethercan account
 
 function Mint() {
   const [mintAmount, setMintAmount] = useState(1);
@@ -16,21 +16,17 @@ function Mint() {
   const [walletConnected, setWalletConnected] = useState(false);
   const [showFirst, setShowFirst] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [currentAccount, setCurrentAccount] = useState(null);
 
   let [totalSupply, setSupply] = useState("");
 
   const [proof, setProof] = useState([""]);
-  const [isProofSet, setIsProofSet] = useState(false);
 
   let leaf = "";
 
   const handleClick = () => {
     setShowFirst(!showFirst);
     setButtonClicked(true);
-  };
-
-  const handleButtonClick = async () => {
-    await connectWalletHandler();
   };
 
   const checkWalletIsConnected = async () => {
@@ -51,14 +47,14 @@ function Mint() {
 
       leaf = keccak256(accounts[0]); // accounts from accounts using accountsconnect/metamask
       setProof(tree.getProof(leaf).map((x) => buf2hex(x.data)));
-      setIsProofSet(true);
-
+      
       console.log("proof", proof);
       console.log(accounts);
 
       if (accounts.length !== 0) {
         const account = accounts[0];
         console.log("Found an authorized account: ", account);
+        setCurrentAccount(account);
       } else {
         console.log("No authorized account found");
       }
@@ -94,33 +90,50 @@ function Mint() {
         let amount = mintAmount;
 
         console.log("Initialize payment");
-        let cost = 0.049 * amount;
-        // let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
+
+        let cost = amount;
+
+        if(amount === 1){
+            cost = 0.05
+        } else if (amount === 2){
+          cost = 0.1
+        } else if (amount === 3) {
+          cost = 0.15
+        }
+        
+        let nftTxn = await nftContract.mint(amount, {value: ethers.utils.parseEther(cost.toString()),});
         console.log("proof", proof);
 
-        if (isProofSet) {
-          let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
-          console.log("Minting... please wait!");
-          await nftTxn.wait();
+ 
+        // let nftTxn = await nftContract.presaleMint(amount, proof, {value: ethers.utils.parseEther(cost.toString()),});
+        console.log("Minting... please wait!");
+        await nftTxn.wait();
 
           console.log(
             `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`
           );
         } else {
-          console.log("Proof has not been set yet.");
-        }
       }
     } catch (err) {
       console.log(err);
     }
   };
 
-  useEffect(() => {
-    if (renderCount < 1 && walletConnected) {
-      setRenderCount(renderCount + 1);
-      checkWalletIsConnected();
-    }
-  }, [walletConnected, renderCount]);
+  const connectWalletButton = () => {
+    return (
+      <p className="mint-yout-pass-button" onClick={connectWalletHandler}>
+        CONNECT YOUR WALLET
+      </p>
+    );
+  };
+
+  const mintNftButton = () => {
+    return (
+      <p className="mint-yout-pass-button" onClick={mintNftHandler}>
+        MINT YOUR PASS
+      </p>
+    );
+  };
 
   async function fetchData() {
     const response = await fetch(
@@ -131,10 +144,11 @@ function Mint() {
   }
 
   useEffect(() => {
-    if (isProofSet) {
-      mintNftHandler();
+    if (renderCount < 1 && walletConnected) {
+      setRenderCount(renderCount + 1);
+      checkWalletIsConnected();
     }
-  }, [isProofSet]);
+  }, [walletConnected, renderCount]);
 
   useEffect(() => {
     fetchData();
@@ -163,7 +177,10 @@ function Mint() {
 
   return (
     <div className="hover">
-      {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
+
+      <WalletChecker />
+
+     {/* {!buttonClicked && (<div className="mint-yout-pass-button" onClick={handleClick}>MINT YOUR PASS</div>)}
         {showFirst ? (
           <div className="first-display"></div>
         ) : (
@@ -180,12 +197,10 @@ function Mint() {
                 <div>+</div>
               </Button>
             </div>
-          <Flex>
-            <div className="mint-yout-pass-button" onClick={handleButtonClick}>MINT YOUR PASS</div>
-          </Flex>
+            <Flex>{currentAccount ? mintNftButton() : connectWalletButton()}</Flex>
             <Flex className="mint-supply">
               <div>
-                MINT PRICE: <span className="supply">0.049 ETH</span>
+                MINT PRICE: <span className="supply">0.05 ETH</span>
               </div>
             </Flex>
             <Flex className="mint-supply">
@@ -193,8 +208,8 @@ function Mint() {
                 Total Minted: <span className="supply">{totalSupply} / 2000</span>
               </div>
             </Flex>
-        </div>
-        )}
+        </div> 
+        )} */}
     </div>
   );
 }
