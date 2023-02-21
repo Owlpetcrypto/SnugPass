@@ -150,7 +150,7 @@ function Mint() {
 
   async function fetchData() {
     const response = await fetch(
-      `https://api-goerli.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${API_KEY}`,
+      `https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${API_KEY}`,
     )
     const mintedTokens = await response.json()
     setSupply(mintedTokens.result)
@@ -190,9 +190,9 @@ function Mint() {
 
   return (
     <div className="hover">
-      <WalletChecker />
+      {/* <WalletChecker /> */}
 
-      {/* {!buttonClicked && (
+      {!buttonClicked && (
         <div className="mint-yout-pass-button" onClick={handleClick}>
           MINT YOUR PASS
         </div>
@@ -228,7 +228,7 @@ function Mint() {
             </div>
           </Flex>
         </div>
-      )} */}
+      )}
     </div>
   )
 }
