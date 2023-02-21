@@ -121,10 +121,6 @@ function Mint() {
         })
         console.log('Minting... please wait!')
         await nftTxn.wait()
-
-        console.log(
-          `Minted, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`,
-        )
       } else {
       }
     } catch (err) {
